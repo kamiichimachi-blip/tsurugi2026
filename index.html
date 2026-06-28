@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>第3回つるぎ山麓トレイルdu上市｜参加者案内</title>
+<meta name="description" content="第3回つるぎ山麓トレイルdu上市 参加者向け案内。駐車場、受付、コース、GPX、エントリーリスト、速報、天気、緊急連絡を掲載。">
+<style>
+:root{
+  --navy:#04152f;--deep:#061d3f;--blue:#0ea5e9;--blue2:#2563eb;--green:#16a34a;
+  --orange:#f97316;--yellow:#facc15;--red:#e11d48;--purple:#7c3aed;--teal:#0891b2;
+  --brown:#92400e;--ink:#102033;--muted:#5d6b82;--line:#d7e4f2;--paper:#ffffff;--bg:#eef6fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);background:
+  radial-gradient(circle at 15% 0%,rgba(14,165,233,.22),transparent 28%),
+  radial-gradient(circle at 85% 5%,rgba(250,204,21,.18),transparent 28%),
+  linear-gradient(180deg,#f8fcff 0%,#eef6fc 46%,#e9f2f7 100%);
+  min-height:100vh;
+}
+.heroHeader{
+  position:relative;overflow:hidden;color:#fff;padding:28px 16px 24px;text-align:center;
+  background:
+    linear-gradient(135deg,rgba(4,21,47,.96),rgba(7,68,116,.92)),
+    radial-gradient(circle at 78% 5%,rgba(34,197,94,.35),transparent 34%);
+}
+.heroHeader:before{
+  content:"";position:absolute;inset:0;background:
+  linear-gradient(120deg,transparent 0 25%,rgba(255,255,255,.06) 25% 26%,transparent 26% 50%,rgba(255,255,255,.05) 50% 51%,transparent 51%);
+  opacity:.7;
+}
+.brand{position:relative;z-index:1;font-weight:900;letter-spacing:.12em;font-size:12px;opacity:.9}
+.heroHeader h1{position:relative;z-index:1;margin:10px 0 8px;font-size:30px;line-height:1.22;font-weight:1000;text-shadow:0 10px 30px rgba(0,0,0,.36)}
+.badges{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px}
+.badge{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);backdrop-filter:blur(12px);padding:7px 11px;border-radius:999px;font-size:13px;font-weight:900}
+.wrap{max-width:980px;margin:0 auto;padding:14px 12px 96px}
+.alert{
+  margin-top:-4px;border-radius:22px;padding:14px;background:linear-gradient(135deg,#fff7ed,#fff);
+  border:1px solid #fed7aa;border-left:8px solid var(--orange);box-shadow:0 14px 32px rgba(6,32,74,.10);font-weight:800;
+}
+.topActions{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;margin:12px 0}
+.heroBtn{
+  border:0;border-radius:24px;padding:20px 15px;text-align:left;color:#fff;font-weight:1000;font-size:20px;
+  background:linear-gradient(135deg,#f97316,#e11d48);box-shadow:0 18px 38px rgba(225,29,72,.26);cursor:pointer;
+}
+.heroBtn.secondary{background:linear-gradient(135deg,#2563eb,#06b6d4);box-shadow:0 18px 38px rgba(37,99,235,.22)}
+.heroBtn small{display:block;margin-top:6px;font-size:12px;opacity:.9;line-height:1.35}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:12px 0}
+.cardbtn{
+  border:1px solid rgba(6,32,74,.08);border-radius:22px;min-height:108px;padding:14px 12px;text-align:left;
+  color:#fff;font-weight:1000;font-size:16px;box-shadow:0 14px 30px rgba(6,32,74,.17),inset 0 1px 0 rgba(255,255,255,.26);
+  cursor:pointer;position:relative;overflow:hidden;transition:.15s ease;
+}
+.cardbtn:active,.heroBtn:active,.btn:active{transform:scale(.98)}
+.cardbtn:after{content:"›";position:absolute;right:14px;bottom:8px;font-size:28px;opacity:.75}
+.icon{display:block;font-size:34px;margin-bottom:5px;filter:drop-shadow(0 5px 6px rgba(0,0,0,.28))}
+.cardbtn small{display:block;margin-top:5px;font-size:12px;line-height:1.35;opacity:.93}
+.blue{background:linear-gradient(135deg,#2563eb,#0ea5e9)}.green{background:linear-gradient(135deg,#16a34a,#14b8a6)}
+.orange{background:linear-gradient(135deg,#f97316,#facc15)}.red{background:linear-gradient(135deg,#e11d48,#be123c)}
+.purple{background:linear-gradient(135deg,#7c3aed,#a855f7)}.teal{background:linear-gradient(135deg,#0891b2,#06b6d4)}
+.brown{background:linear-gradient(135deg,#92400e,#ca8a04)}.graybtn{background:linear-gradient(135deg,#475569,#1e293b)}
+.panel{
+  display:none;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.85);border-radius:28px;
+  margin:16px 0;padding:17px;box-shadow:0 22px 48px rgba(6,32,74,.15);animation:fade .2s ease;
+}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+h2{font-size:25px;margin:0 0 14px;color:var(--navy);padding-bottom:10px;border-bottom:3px solid #e2efff}
+h3{font-size:18px;margin:20px 0 9px;padding:10px 12px;border-radius:15px;color:#073b74;background:linear-gradient(135deg,#e0f2fe,#f8fafc);border-left:7px solid var(--blue)}
+.notice{
+  background:linear-gradient(135deg,#fff7ed,#fef9c3);border:1px solid #fed7aa;border-left:8px solid #f59e0b;
+  border-radius:18px;padding:14px;margin:11px 0;font-weight:900;box-shadow:0 8px 18px rgba(245,158,11,.14)
+}
+.info{background:#f6fbff;border:1px solid var(--line);border-radius:18px;padding:13px;margin:10px 0;color:#26364b}
+.btn{
+  display:block;text-decoration:none;text-align:center;color:white;border-radius:17px;padding:15px;margin:9px 0;font-weight:1000;
+  background:linear-gradient(135deg,#2563eb,#0ea5e9);box-shadow:0 10px 24px rgba(37,99,235,.22);border:1px solid rgba(255,255,255,.5)
+}
+.btn.map{background:linear-gradient(135deg,#16a34a,#06b6d4)}.btn.pdf{background:linear-gradient(135deg,#2563eb,#1e40af)}
+.btn.redbtn{background:linear-gradient(135deg,#e11d48,#be123c)}.btn.gray{background:linear-gradient(135deg,#64748b,#334155)}.btn.gold{background:linear-gradient(135deg,#d97706,#f59e0b)}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;margin:10px 0;border-radius:16px;overflow:hidden;box-shadow:0 7px 20px rgba(15,23,42,.08)}
+th,td{border-bottom:1px solid #e5e7eb;padding:11px;vertical-align:top;background:#fff}
+th{background:linear-gradient(135deg,#dbeafe,#e0f2fe);color:#0f3f7a;font-weight:1000;text-align:left}
+tr:last-child td{border-bottom:0}
+.coursebox{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.course{border-radius:18px;padding:14px 8px;text-align:center;color:#fff;font-weight:1000;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.quicklist{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pill{display:block;background:#eef7ff;border:1px solid #d7eafe;border-radius:14px;padding:10px;font-weight:900;color:#073b74}
+.footer{
+  position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:8px;
+}
+.footer button{border:0;border-radius:13px;padding:10px 4px;background:#06204a;color:white;font-size:12px;font-weight:900}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr)}.cardbtn{min-height:126px}}
+@media(max-width:560px){.heroHeader h1{font-size:24px}.topActions{grid-template-columns:1fr}.cardbtn{font-size:15px;min-height:104px}.coursebox,.quicklist{grid-template-columns:1fr}.panel{border-radius:22px;padding:14px}}
+</style>
+</head>
+<body>
+<header class="heroHeader">
+  <div class="brand">TSURUGI SANROKU TRAIL du KAMIICHI</div>
+  <h1>第3回 つるぎ山麓トレイル<br>du上市 2026</h1>
+  <div class="badges">
+    <span class="badge">2026年7月5日（日）</span>
+    <span class="badge">雨天決行</span>
+    <span class="badge">富士化学スポーツパーク丸山</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="alert">大会参加前に、参加者案内・駐車場・受付時間・必携品を必ず確認してください。親子ペアの部は7月4日（土）15:00開催です。</div>
+
+  <div class="topActions">
+    <button class="heroBtn" onclick="show('guide')">📢 参加者案内<br><small>受付・必携品・大会ルール・注意事項</small></button>
+    <button class="heroBtn secondary" onclick="show('parking')">🅿️ 駐車場<br><small>駐車許可証・Googleマップ・交通案内</small></button>
+  </div>
+
+  <div class="grid">
+    <button class="cardbtn blue" onclick="show('parking')"><span class="icon">🅿️</span>参加者駐車場<small>指定駐車場・PDF・Googleマップ</small></button>
+    <button class="cardbtn green" onclick="show('venue')"><span class="icon">📍</span>受付・会場案内<small>受付場所・更衣室・トイレ</small></button>
+    <button class="cardbtn purple" onclick="show('course')"><span class="icon">🗺️</span>コースマップ<small>ロング・ミドル・ショート・GPX</small></button>
+    <button class="cardbtn orange" onclick="show('entry')"><span class="icon">🏃</span>エントリーリスト<small>現在準備中です</small></button>
+    <button class="cardbtn red" onclick="show('result')"><span class="icon">🏆</span>速報（リザルト）<small>大会当日から確認できます</small></button>
+    <button class="cardbtn teal" onclick="show('schedule')"><span class="icon">⏰</span>タイムスケジュール<small>前日・当日の予定</small></button>
+    <button class="cardbtn blue" onclick="show('festival')"><span class="icon">🎪</span>前日Festival<small>親子ペア・ゲスト・会場</small></button>
+    <button class="cardbtn orange" onclick="show('shops')"><span class="icon">🍴</span>キッチンカー・出店<small>出店ブース一覧</small></button>
+    <button class="cardbtn brown" onclick="show('pdf')"><span class="icon">📄</span>参加案内PDF<small>最新PDFはこちら</small></button>
+    <button class="cardbtn green" onclick="show('weather')"><span class="icon">🌤</span>天気<small>上市町の天気・雨雲</small></button>
+    <button class="cardbtn red" onclick="show('emergency')"><span class="icon">☎️</span>緊急連絡先<small>大会本部・救急・警察</small></button>
+    <button class="cardbtn brown" onclick="show('faq')"><span class="icon">❓</span>よくある質問<small>駐車場・更衣室・手荷物・完走証</small></button>
+  </div>
+
+  <div id="guide" class="panel active">
+    <h2>📢 参加者案内</h2>
+    <div class="notice">受付・駐車場・コース・必携品・注意事項を必ず確認してください。</div>
+    <table>
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>開催日</td><td>2026年7月5日（日）雨天決行</td></tr>
+      <tr><td>親子ペア</td><td>2026年7月4日（土）15:00開催</td></tr>
+      <tr><td>開催地</td><td>富山県中新川郡上市町堤谷11-5</td></tr>
+      <tr><td>受付場所</td><td>富士化学スポーツパーク丸山（旧丸山総合公園）屋内多目的広場前</td></tr>
+      <tr><td>必携品</td><td>マイカップ／1000ml以上の飲料／スマートフォン又は携帯電話／ゼッケン</td></tr>
+    </table>
+    <div class="quicklist">
+      <span class="pill">ロング 6:00スタート</span><span class="pill">ミドル 8:00スタート</span>
+      <span class="pill">ショート 9:00スタート</span><span class="pill">親子ペア 7/4 15:00</span>
+    </div>
+    <a class="btn pdf" href="https://drive.google.com/file/d/17IHGFF5uR7joelRR-Rmx1-A2HczW4crB/view?usp=drivesdk" target="_blank">📄 参加案内2026 PDFを見る</a>
+    <a class="btn gold" href="#pdf" onclick="show('pdf');return false;">📄 参加案内PDFページへ</a>
+  </div>
+
+  <div id="parking" class="panel">
+    <h2>🅿️ 参加者駐車場のご案内</h2>
+    <div class="notice"><b>必ず指定の駐車場をご利用ください。</b><br>駐車許可証PDFをダウンロード・印刷し、車のフロントに掲示してください。当日は誘導係員の案内に従って駐車してください。</div>
+    <h3>ショートコース（15km）指定駐車場</h3>
+    <div class="notice">指定駐車場：富士化学工業</div>
+    <a class="btn redbtn" href="https://drive.google.com/file/d/1JM1Bil2djYsKsKRIbBuJYa_N24nCtU2S/view?usp=drivesdk" target="_blank">🖨️ ショート駐車許可証PDFを開く・印刷</a>
+    <a class="btn pdf" href="https://drive.google.com/drive/folders/1K-8hgC60sN9NBGh-xDhhfcclxODcdXh2" target="_blank">📄 富士化学工業 駐車場マップ</a>
+    <a class="btn map" href="https://maps.app.goo.gl/h7cu8D5MPgMxNBgM8?g_st=ac" target="_blank">🧭 富士化学工業をGoogleマップで開く</a>
+
+    <h3>ミドルコース（24km）指定駐車場</h3>
+    <div class="notice">指定駐車場：上市町役場・池田模範堂</div>
+    <a class="btn redbtn" href="https://drive.google.com/file/d/1RPGGe0b6J4dKr4c181DsL1ROBM1RuCpW/view?usp=drivesdk" target="_blank">🖨️ ミドル駐車許可証PDFを開く・印刷</a>
+    <a class="btn pdf" href="https://drive.google.com/drive/folders/1clF28Jbp1VRZncTgbjO-T8TbgAjzEGIW" target="_blank">📄 上市町役場 駐車場マップ</a>
+    <a class="btn map" href="https://maps.app.goo.gl/WVhvCfuoGWQ3Fpek8?g_st=ac" target="_blank">🧭 上市町役場をGoogleマップで開く</a>
+    <a class="btn pdf" href="https://drive.google.com/drive/folders/1mUTiGlK7vhUYtt2gmKRduQQiQkdk26e2" target="_blank">📄 池田模範堂 駐車場マップ</a>
+    <a class="btn map" href="https://maps.app.goo.gl/UA77tdv3rPSffZni7" target="_blank">🧭 池田模範堂をGoogleマップで開く</a>
+
+    <h3>ロングコース（56km）指定駐車場</h3>
+    <div class="notice">指定駐車場：フジスポ周辺</div>
+    <a class="btn redbtn" href="https://drive.google.com/file/d/1sHovAD7_QWzEd0WxlFgnfKxotMNwyaAs/view?usp=drivesdk" target="_blank">🖨️ ロング駐車許可証PDFを開く・印刷</a>
+    <a class="btn pdf" href="https://drive.google.com/drive/folders/1eNt5J5atzQE8MboHZF9aDLR_vnkT_W5G" target="_blank">📄 フジスポ周辺 駐車場マップ</a>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=富士化学スポーツパーク丸山" target="_blank">🧭 フジスポ周辺をGoogleマップで開く</a>
+    <a class="btn gray" href="https://drive.google.com/file/d/1zsPES9uqafqGfqJRpvUVZ24sxyPozLKX/view" target="_blank">🚃 アクセス・交通案内を見る</a>
+    <a class="btn gray" href="https://drive.google.com/drive/folders/1D1sHwPzG4rubMQrxKKYBvwZboqc64i5X" target="_blank">📁 参加者案内メール添付資料フォルダを開く</a>
+    <a class="btn gray" href="https://drive.google.com/drive/folders/1friHmfQv6s2syC1AiU6Ptcd5Os-Uau1Z" target="_blank">📁 全駐車場マップフォルダ</a>
+  </div>
+
+  <div id="venue" class="panel">
+    <h2>📍 受付・会場案内</h2>
+    <p><b>受付場所：</b>富士化学スポーツパーク丸山 屋内多目的広場前</p>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=富士化学スポーツパーク丸山" target="_blank">📍 会場をGoogleマップで開く</a>
+    <a class="btn pdf" href="https://drive.google.com/file/d/1FeOdNyfJk188Egv4P8Zq2gA6aRmzjTVr/view" target="_blank">📄 会場レイアウトを見る</a>
+    <div class="info">前日受付された方は当日受付の必要はありません。</div>
+  </div>
+
+  <div id="course" class="panel">
+    <h2>🗺️ コースマップ</h2>
+    <div class="coursebox">
+      <div class="course" style="background:#e11d48">ロング<br>56km<br>制限17:00</div>
+      <div class="course" style="background:#16a34a">ミドル<br>24km<br>制限14:00</div>
+      <div class="course" style="background:#0ea5e9">ショート<br>15km<br>制限14:00</div>
+    </div>
+    <a class="btn pdf" href="https://drive.google.com/drive/folders/1LcJWZNrZcf_wqfOL3Z8rVfkNRhPQcum6" target="_blank">📁 コースMAPフォルダ</a>
+    <a class="btn pdf" href="https://drive.google.com/file/d/16pEmqmhfvyUNvYWbYOg9Su3-wTIImHkr/view" target="_blank">🗺 全コースMAPショート修正版</a>
+    <a class="btn pdf" href="https://drive.google.com/file/d/1t_hHFW_vUMmZaV7kdMyReQZWcVylknuy/view" target="_blank">🗺 R8コース全図</a>
+    <h3>GPXデータ</h3>
+    <div class="notice">Garmin・YAMAP等に取り込む場合はこちらを使用してください。</div>
+    <a class="btn map" href="https://drive.google.com/file/d/1raowQ352YTHty7h9gjpuWGSt983kjInP/view?usp=drivesdk" target="_blank">⬇️ ロングGPXをダウンロード</a>
+    <a class="btn map" href="https://drive.google.com/file/d/1B_3lF01N9DdWD8pGjx0KYMg7MslW9lqo/view?usp=drivesdk" target="_blank">⬇️ ミドルGPXをダウンロード</a>
+    <a class="btn map" href="https://drive.google.com/file/d/1C-t9ZpYzY_JFwU2qfzLwdsyOepUiUE8c/view?usp=drivesdk" target="_blank">⬇️ ショートGPXをダウンロード</a>
+  </div>
+
+  <div id="entry" class="panel"><h2>🏃 エントリーリスト</h2><div class="notice">現在準備中です。公開後、このボタンから確認できるようにします。</div></div>
+  <div id="result" class="panel"><h2>🏆 速報（リザルト）</h2><div class="notice">速報は大会当日からご覧いただけます。公開後、このボタンから確認できるようにします。</div></div>
+
+  <div id="schedule" class="panel">
+    <h2>⏰ タイムスケジュール</h2>
+    <table>
+      <tr><th>時間</th><th>内容</th></tr>
+      <tr><td>7/4 15:00</td><td>親子ペアの部</td></tr>
+      <tr><td>7/5 4:30〜5:30</td><td>ロング当日受付</td></tr>
+      <tr><td>7/5 6:00</td><td>ロングスタート</td></tr>
+      <tr><td>7/5 6:30〜7:30</td><td>ミドル当日受付</td></tr>
+      <tr><td>7/5 8:00</td><td>ミドルスタート</td></tr>
+      <tr><td>7/5 7:30〜8:30</td><td>ショート当日受付</td></tr>
+      <tr><td>7/5 9:00</td><td>ショートスタート</td></tr>
+      <tr><td>7/5 11:30頃〜</td><td>表彰式</td></tr>
+      <tr><td>7/5 17:00</td><td>大会終了</td></tr>
+    </table>
+    <h3>制限時間・関門</h3>
+    <table>
+      <tr><th>種目</th><th>制限時間</th><th>関門</th></tr>
+      <tr><td>ロング</td><td>17:00（11時間）</td><td>A2 9:30／A3 11:30／A4 13:00／A5 15:00</td></tr>
+      <tr><td>ミドル</td><td>14:00（6時間）</td><td>A3 13:00</td></tr>
+      <tr><td>ショート</td><td>14:00（5時間）</td><td>A2 11:00</td></tr>
+      <tr><td>親子ペア</td><td>30分</td><td>-</td></tr>
+    </table>
+  </div>
+
+  <div id="festival" class="panel"><h2>🎪 前日Festival</h2><p><b>開催：</b>2026年7月4日（土）14:00〜17:00</p><p><b>親子ペアラン：</b>15:00開催</p><ul><li>ゲストトークショー</li><li>ビンゴ大会</li><li>キッチンカー・出店</li><li>ファイテン実演販売・テーピング講習</li></ul></div>
+
+  <div id="shops" class="panel"><h2>🍴 出店・キッチンカー</h2><h3>出店ブース</h3><p>スポーツのマンゾク／おいエナ／ナガノトマト／ALTRA／OLENO／ファイテン／VAGA／上市町観光協会／きーぽんライスワークス／YUZUさん／ガチオさん／その他</p><h3>コンディショニングブース</h3><p>訪問鍼灸SHINSAKA</p><h3>キッチンカー</h3><p>キッチンBBB／たこ三／亀山ベビーカステラ社中／ONEDIVE／カラカラ</p></div>
+
+  <div id="pdf" class="panel">
+    <h2>📄 参加案内PDF</h2>
+    <div class="notice">最新の参加案内PDFはこちらです。必要に応じてGoogle Driveで開いて確認してください。</div>
+    <a class="btn pdf" href="https://drive.google.com/file/d/17IHGFF5uR7joelRR-Rmx1-A2HczW4crB/view?usp=drivesdk" target="_blank">📄 参加案内2026.pdfをGoogle Driveで開く</a>
+    <a class="btn gray" href="https://drive.google.com/file/d/1zsPES9uqafqGfqJRpvUVZ24sxyPozLKX/view" target="_blank">🚃 アクセス・交通案内を見る</a>
+  </div>
+
+  <div id="weather" class="panel">
+    <h2>🌤 天気</h2>
+    <div class="notice">大会当日の天気・気温・雨雲レーダーはこちらから確認してください。</div>
+    <a class="btn map" href="https://weather.yahoo.co.jp/weather/jp/16/5510/16322.html" target="_blank">🌤 Yahoo!天気 上市町</a>
+    <a class="btn pdf" href="https://tenki.jp/forecast/4/19/5510/16322/" target="_blank">☔ tenki.jp 上市町</a>
+    <a class="btn gray" href="https://weather.yahoo.co.jp/weather/zoomradar/" target="_blank">🌧 雨雲レーダー</a>
+  </div>
+
+  <div id="emergency" class="panel"><h2>☎️ 緊急連絡先</h2><a class="btn redbtn" href="tel:09018559544">📞 大会本部 090-1855-9544</a><div class="notice">レース中に怪我で動けなくなった場合などは、大会本部へ連絡してください。</div></div>
+
+  <div id="faq" class="panel"><h2>❓ よくある質問</h2><p><b>Q. 前日受付した場合、当日受付は必要ですか？</b><br>A. 必要ありません。</p><p><b>Q. 完走証はありますか？</b><br>A. 紙の完走証は発行しません。WEB完走証です。</p><p><b>Q. 必携品は？</b><br>A. マイカップ、1000ml以上の飲料、スマートフォン又は携帯電話、ゼッケンです。</p><p><b>Q. リタイアはどこで申告しますか？</b><br>A. 原則としてエイドステーションで申告してください。</p><p><b>Q. コース上で怪我をした場合は？</b><br>A. 近くのスタッフ、または大会本部 090-1855-9544 へ連絡してください。</p></div>
+</div>
+
+<div class="footer">
+  <button onclick="show('guide')">参加案内</button>
+  <button onclick="show('parking')">駐車場</button>
+  <button onclick="show('weather')">天気</button>
+  <button onclick="show('emergency')">緊急</button>
+</div>
+
+<script>
+function show(id){
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+ const el=document.getElementById(id);
+ if(el) el.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
