@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>つるぎ山麓トレイル du 上市｜ボランティア専用ページ</title>
+  <meta name="description" content="第3回つるぎ山麓トレイル du 上市 ボランティアスタッフ専用ページ。集合時間、駐車場、各班資料、緊急時対応をスマホで確認できます。">
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --ink:#111827;
+      --muted:#667085;
+      --line:#e5e7eb;
+      --navy:#0b1220;
+      --blue:#2563eb;
+      --green:#16a34a;
+      --orange:#f97316;
+      --red:#dc2626;
+      --purple:#7c3aed;
+      --shadow:0 12px 30px rgba(15,23,42,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(37,99,235,.18), transparent 35%),
+        radial-gradient(circle at 90% 0%, rgba(22,163,74,.14), transparent 30%),
+        linear-gradient(180deg,#f8fbff 0%,#f5f7fb 100%);
+      line-height:1.7;
+    }
+    a{color:inherit}
+    .hero{
+      padding:28px 18px 18px;
+      background:linear-gradient(135deg,#08111f,#14213d 56%,#0f766e);
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{content:"";position:absolute;inset:-20% -30% auto auto;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.12);filter:blur(2px)}
+    .heroInner{position:relative;max-width:860px;margin:0 auto}
+    .kicker{font-size:12px;letter-spacing:.12em;font-weight:800;opacity:.85;text-transform:uppercase}
+    h1{font-size:30px;line-height:1.15;margin:12px 0 8px;letter-spacing:.02em}
+    .subtitle{font-size:15px;opacity:.92;margin:0 0 14px}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .badge{font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18)}
+    .wrap{max-width:860px;margin:0 auto;padding:18px 14px 120px}
+    .notice{
+      background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;
+      border-radius:20px;padding:14px 16px;font-weight:700;margin-bottom:14px;
+    }
+    .card{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(229,231,235,.9);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      margin:16px 0;
+      overflow:hidden;
+    }
+    .card h2{font-size:22px;line-height:1.25;margin:0 0 8px;letter-spacing:.01em}
+    .card h3{font-size:17px;margin:18px 0 8px}
+    .lead{color:var(--muted);margin:0 0 14px;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .btn{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      min-height:58px;padding:14px 12px;border-radius:18px;
+      text-decoration:none;color:white;font-weight:900;text-align:center;
+      background:linear-gradient(135deg,#111827,#374151);
+      box-shadow:0 10px 22px rgba(17,24,39,.14);
+      border:0;
+    }
+    .btn small{display:block;font-size:11px;font-weight:700;opacity:.85;margin-top:2px}
+    .btn.full{grid-column:1/-1}
+    .btn.blue{background:linear-gradient(135deg,#1d4ed8,#2563eb)}
+    .btn.green{background:linear-gradient(135deg,#15803d,#16a34a)}
+    .btn.orange{background:linear-gradient(135deg,#c2410c,#f97316)}
+    .btn.red{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+    .btn.purple{background:linear-gradient(135deg,#5b21b6,#7c3aed)}
+    .btn.teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+    .btn.light{background:#fff;color:#111827;border:1px solid var(--line);box-shadow:none}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{font-size:12px;font-weight:800;border:1px solid var(--line);border-radius:999px;padding:5px 9px;background:#fff;color:#334155}
+    .infoList{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+    .infoList li{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:12px 13px}
+    .infoList b{display:block;margin-bottom:2px}
+    .timeline{display:grid;gap:10px;margin-top:12px}
+    .timeRow{display:grid;grid-template-columns:72px 1fr;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:10px 12px;align-items:start}
+    .time{font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums}
+    .roleGrid{display:grid;gap:10px}
+    details.role{
+      border:1px solid #e2e8f0;background:#fff;border-radius:18px;overflow:hidden;
+    }
+    details.role summary{
+      cursor:pointer;padding:15px 16px;font-weight:900;list-style:none;display:flex;justify-content:space-between;align-items:center;
+    }
+    details.role summary::-webkit-details-marker{display:none}
+    details.role summary:after{content:"＋";font-weight:900;color:#64748b}
+    details.role[open] summary:after{content:"−"}
+    .roleBody{padding:0 16px 16px;color:#334155}
+    .roleBody ul{padding-left:1.2em;margin:8px 0 0}
+    .roleBody li{margin:5px 0}
+    .danger{border-left:5px solid var(--red);background:#fff1f2}
+    .success{border-left:5px solid var(--green);background:#f0fdf4}
+    .mapBox{display:grid;gap:10px;margin-top:12px}
+    .mapLink{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border:1px solid #dbe3ef;border-radius:16px;background:#fff;text-decoration:none;font-weight:850}
+    .mapLink span{color:#64748b;font-size:12px;font-weight:800}
+    .footerNav{
+      position:fixed;left:0;right:0;bottom:0;z-index:30;
+      display:grid;grid-template-columns:repeat(5,1fr);gap:6px;
+      padding:9px 10px calc(9px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-top:1px solid #dbe3ef;
+    }
+    .footerNav a{font-size:11px;text-decoration:none;text-align:center;color:#0f172a;font-weight:900;background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:8px 4px;line-height:1.25}
+    .topBtn{position:fixed;right:14px;bottom:86px;z-index:25;background:#0f172a;color:white;border-radius:999px;text-decoration:none;padding:10px 13px;font-weight:900;box-shadow:var(--shadow)}
+    .note{font-size:12px;color:#64748b;margin-top:8px}
+    @media (max-width:520px){
+      h1{font-size:26px}.wrap{padding-left:12px;padding-right:12px}.card{padding:16px}.grid{grid-template-columns:1fr}.btn.full{grid-column:auto}.timeRow{grid-template-columns:64px 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="heroInner">
+      <div class="kicker">TSURUGI SANROKU TRAIL du KAMIICHI</div>
+      <h1>ボランティア<br>スタッフ専用ページ</h1>
+      <p class="subtitle">集合時間・駐車場・各班資料・緊急時対応をスマホで確認できます。</p>
+      <div class="badges">
+        <span class="badge">2026.7.4 SAT</span>
+        <span class="badge">2026.7.5 SUN</span>
+        <span class="badge">最終更新 2026.6.29</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="notice">まず「集合・受付」「自分の担当班」「緊急時対応」を確認してください。直接担当場所へ向かう方・直接帰宅する方は、本部または担当リーダーへ事前連絡をお願いします。</div>
+
+    <section class="card" id="menu">
+      <h2>まず確認</h2>
+      <p class="lead">必要な情報にすぐ移動できます。</p>
+      <div class="grid">
+        <a class="btn blue" href="#basic">✅ まず確認</a>
+        <a class="btn green" href="#schedule">🕓 集合時間</a>
+        <a class="btn orange" href="#parking">🅿️ 駐車場</a>
+        <a class="btn purple" href="#roles">👥 各班資料</a>
+        <a class="btn red" href="#emergency">🚨 緊急時対応</a>
+        <a class="btn teal" href="#documents">📄 PDF資料</a>
+      </div>
+    </section>
+
+    <section class="card" id="basic">
+      <h2>✅ 全員共通で確認</h2>
+      <ul class="infoList">
+        <li><b>集合場所</b>基本集合は、フジスポ屋内多目的広場です。直接担当場所へ向かう方は、事前に本部または担当リーダーへ連絡してください。</li>
+        <li><b>受付</b>スタッフTシャツ、キッチンカー利用割引券などをお渡しします。</li>
+        <li><b>お弁当・ドリンク</b>おにぎり2個、お茶2本を当日10:00ごろから配布予定です。誘導班・エイド班の一部は事前渡し、または担当箇所へ配達します。</li>
+        <li><b>持ち物</b>歩きやすいシューズ、帽子、サングラス、日焼け止め、携帯電話、行動食、飲料水、虫よけ、熊鈴、雨具、ザック、応援グッズ。</li>
+        <li><b>服装</b>配布するスタッフTシャツを着用してください。天候に応じて雨具・暑さ対策は各自で準備してください。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="schedule">
+      <h2>🕓 集合時間・当日の流れ</h2>
+      <h3>7月4日（土）前日Festival</h3>
+      <div class="timeline">
+        <div class="timeRow"><div class="time">13:00</div><div>ボランティア受付開始｜フジスポ屋内多目的広場</div></div>
+        <div class="timeRow"><div class="time">14:00</div><div>前日受付開始・親子ペアラン受付開始（〜14:30）</div></div>
+        <div class="timeRow"><div class="time">15:00</div><div>親子ペアランの部 スタート</div></div>
+        <div class="timeRow"><div class="time">15:30</div><div>ゲストトークショー</div></div>
+        <div class="timeRow"><div class="time">16:00</div><div>ビンゴ大会（〜16:30）</div></div>
+        <div class="timeRow"><div class="time">17:00</div><div>前日受付終了</div></div>
+      </div>
+      <h3>7月5日（日）大会当日</h3>
+      <div class="timeline">
+        <div class="timeRow"><div class="time">4:00</div><div>ボランティア受付開始｜フジスポ屋内多目的広場</div></div>
+        <div class="timeRow"><div class="time">4:30</div><div>ロングの部 当日受付開始（〜5:30）</div></div>
+        <div class="timeRow"><div class="time">6:00</div><div>ロングの部 スタート</div></div>
+        <div class="timeRow"><div class="time">6:30</div><div>ミドルの部 当日受付開始（〜7:30）</div></div>
+        <div class="timeRow"><div class="time">7:30</div><div>ショートの部 当日受付開始（〜8:30）</div></div>
+        <div class="timeRow"><div class="time">8:00</div><div>ミドルの部 スタート</div></div>
+        <div class="timeRow"><div class="time">9:00</div><div>ショートの部 スタート</div></div>
+        <div class="timeRow"><div class="time">9:30</div><div>ロング関門｜A2 日石寺エイド</div></div>
+        <div class="timeRow"><div class="time">11:00</div><div>ショート関門｜A2 日石寺エイド</div></div>
+        <div class="timeRow"><div class="time">11:30</div><div>ロング関門｜A3 白萩南部小学校エイド</div></div>
+        <div class="timeRow"><div class="time">13:00</div><div>ロング関門｜A4 上市町森林総合センターエイド／ミドル関門｜A3 白萩南部小学校エイド</div></div>
+        <div class="timeRow"><div class="time">14:00</div><div>ショートの部・ミドルの部 制限時間</div></div>
+        <div class="timeRow"><div class="time">15:00</div><div>ロング関門｜A5 白萩南部小学校エイド</div></div>
+        <div class="timeRow"><div class="time">17:00</div><div>ロングの部 制限時間</div></div>
+      </div>
+      <p class="note">終了後、後片付けにご協力をお願いします。</p>
+    </section>
+
+    <section class="card" id="parking">
+      <h2>🅿️ ボランティア駐車場</h2>
+      <ul class="infoList">
+        <li><b>受付・ゴール・スイーパー・救護本部</b>丸山配水場、白萩西部公民館の駐車場を利用してください。</li>
+        <li><b>日石寺エイド</b>大岩公民館を利用してください。</li>
+        <li><b>白萩南部小学校エイド・森林センターエイド</b>担当リーダーに確認してください。</li>
+        <li><b>誘導班</b>車両の通行やランナーへの影響がない場所に駐車してください。</li>
+      </ul>
+      <div class="mapBox">
+        <a class="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%A3%AB%E5%8C%96%E5%AD%A6%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%91%E3%83%BC%E3%82%AF%E4%B8%B8%E5%B1%B1">フジスポ周辺 <span>Google Map</span></a>
+        <a class="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%B8%E5%B1%B1%E9%85%8D%E6%B0%B4%E5%A0%B4%20%E7%99%BD%E8%90%A9%E8%A5%BF%E9%83%A8%E5%85%AC%E6%B0%91%E9%A4%A8">丸山配水場・白萩西部公民館 <span>Google Map</span></a>
+        <a class="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B2%A9%E5%85%AC%E6%B0%91%E9%A4%A8%20%E4%B8%8A%E5%B8%82%E7%94%BA">大岩公民館 <span>Google Map</span></a>
+        <a class="mapLink" target="_blank" rel="noopener" href="https://maps.app.goo.gl/2buNBUscEfXu4hgE9">白萩南部小学校 <span>Google Map</span></a>
+        <a class="mapLink" target="_blank" rel="noopener" href="https://maps.app.goo.gl/EAjV2MkAc1huJdhZA">上市森林センター <span>Google Map</span></a>
+      </div>
+    </section>
+
+    <section class="card" id="roles">
+      <h2>👥 担当別資料</h2>
+      <p class="lead">自分の担当ボタンを押して、該当資料を確認してください。</p>
+      <div class="grid">
+        <a class="btn green" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/17hfCth5z3Ca7Tss6kPHa2wyy5TeftP_b">🍙 エイド<br><small>Google Drive</small></a>
+        <a class="btn orange" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1vP-N5ZjWAlwP9s2Qg4mjdKxry7y7ezwp">🚩 誘導<br><small>Google Drive</small></a>
+        <a class="btn blue" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1PTwthnBSR6gB8myF5FSIBeQiXWY2y-Dh">📝 受付<br><small>Google Drive</small></a>
+        <a class="btn purple" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1PTwthnBSR6gB8myF5FSIBeQiXWY2y-Dh">⏱ 計測<br><small>Google Drive</small></a>
+      </div>
+      <h3>各班の要点</h3>
+      <div class="roleGrid">
+        <details class="role"><summary>🍙 エイド</summary><div class="roleBody"><ul><li>選手への励まし</li><li>フラスクへの給水</li><li>補給食の補充</li><li>不足・トラブルはリーダーへ連絡</li></ul></div></details>
+        <details class="role"><summary>🚩 駐車場誘導・会場周辺誘導</summary><div class="roleBody"><ul><li>許可証を確認し、該当駐車場へ案内</li><li>奥から詰めて駐車するよう声掛け</li><li>状況に応じて前向き駐車を推奨</li><li>迷う場合は本部またはリーダーへ無線連絡</li><li>会場内ではトイレ、荷物置き場、エイド、キッチンカー等を案内</li></ul></div></details>
+        <details class="role"><summary>🧭 コース誘導</summary><div class="roleBody"><ul><li>確実な誘導と温かい応援</li><li>分岐点、種目ごとのコース違いを把握</li><li>道路横断は安全第一</li><li>緊急時は「ポイント・自分の名前・ゼッケン番号・選手の状況」を本部へ連絡</li><li>救護スタッフ到着まで、原則として現場を離れない</li></ul></div></details>
+        <details class="role"><summary>📝 受付</summary><div class="roleBody"><ul><li>本人確認</li><li>配付物のお渡し</li><li>DNS（欠場）対応</li><li>手荷物預かりは屋内多目的広場</li></ul></div></details>
+        <details class="role"><summary>⏱ 計測</summary><div class="roleBody"><ul><li>ポイントでゼッケン番号確認</li><li>関門時間は「エイドを出発する時間」</li><li>次の関門に間に合わなさそうな場合は棄権を勧める</li><li>DNFは原則エイドのみ。ゼッケンに赤で×、計測チップ回収</li><li>本部へ「A5 311 DNF」のようにシンプルに連絡</li></ul></div></details>
+        <details class="role"><summary>🚑 救護</summary><div class="roleBody"><ul><li>医師2名、看護師12名、救護補助スタッフ2名</li><li>AED配置：本部救護所、A1大観峯、A2大岩山日石寺、A3/A5白萩南部小学校、A4森林センター</li><li>想定傷病：熱中症、脱水、転倒外傷、蜂刺傷、捻挫、骨折、心疾患等</li><li>重症時は本部救護所への連絡と119番通報を優先</li></ul></div></details>
+        <details class="role"><summary>🏃 スイーパー</summary><div class="roleBody"><ul><li>最後尾ランナーの位置確認</li><li>落とし物・テープ回収</li><li>一時救護、ランナー状態確認</li><li>ポイント通過ごとに本部へ連絡</li><li>走行困難者は車が向かえる場所まで介助</li></ul></div></details>
+        <details class="role"><summary>🏁 ゴール</summary><div class="roleBody"><ul><li>ランナーのお迎え</li><li>ゴールへの誘導</li><li>計測チップ回収</li><li>参加賞の配付</li><li>ゴール周辺・応援エリアへの誘導</li></ul></div></details>
+        <details class="role"><summary>📷 撮影</summary><div class="roleBody"><ul><li>各部門のスタートは必須</li><li>上位選手のゴールシーン</li><li>つるぎ山麓トレイルらしいスポット・シーン</li><li>ランナーの表情</li><li>データ提出</li></ul></div></details>
+        <details class="role"><summary>🏢 本部</summary><div class="roleBody"><ul><li>ゲスト・出店者対応</li><li>弁当配布</li><li>各班からの連絡整理</li></ul></div></details>
+      </div>
+    </section>
+
+    <section class="card danger" id="emergency">
+      <h2>🚨 緊急時対応</h2>
+      <ul class="infoList">
+        <li><b>基本</b>現場スタッフは、まず大会本部救護所へ連絡してください。</li>
+        <li><b>重症・緊急</b>119番通報を行ってください。現場に複数名いる場合は、本部連絡と119番通報を同時に行ってください。</li>
+        <li><b>本部へ伝える内容</b>①ポイント ②自分の名前 ③選手のゼッケン番号・名前 ④選手の状況</li>
+        <li><b>救急隊対応</b>救急隊は、コースや林道への進入経路を熟知した大会スタッフの案内を前提として出動します。現場案内できるスタッフの協力をお願いします。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="documents">
+      <h2>📄 資料ダウンロード</h2>
+      <p class="lead">全体を確認したい方はこちら。スマホでは、まず上の各ボタンから確認するのがおすすめです。</p>
+      <div class="grid">
+        <a class="btn blue" href="volunteer_guide_2026.pdf" target="_blank" rel="noopener">📄 ボランティア全体PDF</a>
+        <a class="btn orange" href="staff_parking_permit_2026.pdf" target="_blank" rel="noopener">🅿️ スタッフ駐車許可証</a>
+      </div>
+      <p class="note">※スタッフ駐車許可証PDFは、GitHubに「staff_parking_permit_2026.pdf」という名前でアップロードしてください。</p>
+    </section>
+  </main>
+
+  <a class="topBtn" href="#top">↑ 上へ</a>
+  <nav class="footerNav" aria-label="固定メニュー">
+    <a href="#basic">確認</a>
+    <a href="#schedule">時間</a>
+    <a href="#parking">駐車</a>
+    <a href="#roles">各班</a>
+    <a href="#emergency">緊急</a>
+  </nav>
+</body>
+</html>
