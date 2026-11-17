@@ -128,7 +128,8 @@
   $("comment").addEventListener("input", function () { $("cnt").textContent = this.value.length; });
   $("tel").addEventListener("input", function () {
     // 全角数字を半角に、数字以外を除去
-    this.value = this.value.replace(/[０-９]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/\D/g, "").slice(0, 11);
+    // 自動入力の「+81 90…」「81-90…」を「090…」に直す
+    this.value = this.value.replace(/^[\s　]*[+＋]?[8８][1１][\s　\-ー－]*(?=[1-9１-９])/, "0").replace(/[０-９]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/\D/g, "").slice(0, 11);
   });
 
   function err(id, on) { $("e-" + id).classList.toggle("show", on); return on; }
