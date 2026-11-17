@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>yuzuさんと東条うどん交流会 お申込み</title>
+<style>
+  :root { --main:#1f5f8b; --accent:#d9822b; --bg:#f6f4ef; --text:#222; --err:#c0392b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+  .wrap { max-width:560px; margin:0 auto; padding:20px 16px 48px; }
+  header { background:var(--main); color:#fff; border-radius:12px; padding:20px 18px; }
+  header .sub { font-size:13px; opacity:.9; margin:0 0 4px; }
+  header h1 { font-size:22px; margin:0; line-height:1.4; }
+  .info { background:#fff; border-radius:12px; padding:16px 18px; margin-top:14px; font-size:15px; }
+  .info dl { margin:0; display:grid; grid-template-columns:5em 1fr; gap:6px 8px; }
+  .info dt { font-weight:bold; color:var(--main); }
+  .info dd { margin:0; }
+  .note { font-size:13px; color:#555; margin:10px 0 0; }
+  form, .closed, .done { background:#fff; border-radius:12px; padding:18px; margin-top:14px; }
+  label { display:block; font-weight:bold; margin:16px 0 6px; font-size:15px; }
+  label:first-child { margin-top:0; }
+  .req { background:var(--accent); color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  .opt { background:#999; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  input[type=text], input[type=tel], input[type=email], select, textarea {
+    width:100%; font-size:16px; padding:11px 12px; border:1px solid #bbb; border-radius:8px; background:#fff; font-family:inherit; }
+  textarea { min-height:90px; resize:vertical; }
+  .hint { font-size:12px; color:#666; margin-top:4px; }
+  .fielderr { color:var(--err); font-size:13px; margin-top:4px; display:none; }
+  .fielderr.show { display:block; }
+  button { width:100%; margin-top:22px; padding:15px; font-size:17px; font-weight:bold; color:#fff; background:var(--accent); border:none; border-radius:10px; }
+  button:disabled { background:#aaa; }
+  .msg { margin-top:14px; padding:12px; border-radius:8px; font-size:15px; display:none; }
+  .msg.err { display:block; background:#fdecea; color:var(--err); }
+  .done { display:none; text-align:center; font-size:16px; }
+  .done.show { display:block; }
+  .done p { margin:0; }
+  .closed { text-align:center; font-size:17px; font-weight:bold; display:none; }
+  .closed.show { display:block; }
+  .hp { position:absolute; left:-9999px; }
+  footer { text-align:center; font-size:12px; color:#777; margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="sub">早乙女湖 ULTRA CHALLENGE 2026 アフター交流会</p>
+    <h1>yuzuさんと東条うどん交流会</h1>
+  </header>
+
+  <section class="info">
+    <dl>
+      <dt>日時</dt><dd>2026年11月22日（日）18:00〜18:45</dd>
+      <dt>会場</dt><dd>東条うどん（富山市新庄町）</dd>
+      <dt>参加費</dt><dd>無料（うどんを1品以上ご注文ください。飲食代は各自のお支払いです）</dd>
+      <dt>定員</dt><dd>先着15名</dd>
+      <dt>締切</dt><dd>11月22日（日）17:00</dd>
+    </dl>
+    <p class="note">お申込みは1名ずつです。同伴の方も各自でお申し込みください。定員になり次第、キャンセル待ちとなります。</p>
+  </section>
+
+  <div class="closed" id="closed">受付は終了しました</div>
+
+  <form id="form" novalidate>
+    <label for="name">お名前<span class="req">必須</span></label>
+    <input type="text" id="name" maxlength="40" autocomplete="name">
+    <div class="fielderr" id="e-name">お名前を入力してください（40字まで）</div>
+
+    <label for="kana">フリガナ<span class="opt">任意</span></label>
+    <input type="text" id="kana" maxlength="40">
+
+    <label for="cat">参加区分<span class="req">必須</span></label>
+    <select id="cat">
+      <option value="">選択してください</option>
+      <option>61km</option>
+      <option>30km</option>
+      <option>7.6km</option>
+      <option>ウォーク</option>
+      <option>ボランティア</option>
+      <option>その他</option>
+    </select>
+    <div class="fielderr" id="e-cat">参加区分を選択してください</div>
+
+    <label for="tel">電話番号<span class="req">必須</span></label>
+    <input type="tel" id="tel" inputmode="numeric" maxlength="11" autocomplete="tel" placeholder="09012345678">
+    <div class="hint">ハイフンなし・数字のみ（10〜11桁）</div>
+    <div class="fielderr" id="e-tel">ハイフンなしの数字10〜11桁で入力してください</div>
+
+    <label for="email">メールアドレス<span class="opt">任意</span></label>
+    <input type="email" id="email" autocomplete="email">
+    <div class="fielderr" id="e-email">メールアドレスの形式が正しくありません</div>
+
+    <label for="comment">ひとこと<span class="opt">任意</span></label>
+    <textarea id="comment" maxlength="200"></textarea>
+    <div class="hint"><span id="cnt">0</span>/200字</div>
+
+    <input type="text" id="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <button type="submit" id="btn">申し込む</button>
+    <div class="msg" id="msg"></div>
+  </form>
+
+  <div class="done" id="done">
+    <p>お申込みを受け付けました。先着15名を超えた場合はキャンセル待ちとして、主催者からご連絡します。</p>
+  </div>
+
+  <footer>主催：東条うどん</footer>
+</div>
+
+<script>
+(function () {
+  var ENDPOINT = "https://formsubmit.co/ajax/tsurugi36trail@gmail.com";
+  var DEADLINE = Date.parse("2026-11-22T17:00:00+09:00");
+
+  var form = document.getElementById("form");
+  var closed = document.getElementById("closed");
+  var done = document.getElementById("done");
+  var btn = document.getElementById("btn");
+  var msg = document.getElementById("msg");
+  var $ = function (id) { return document.getElementById(id); };
+
+  function isClosed() { return Date.now() >= DEADLINE; }
+  function showClosed() { form.style.display = "none"; closed.classList.add("show"); }
+  if (isClosed()) showClosed();
+  setInterval(function () { if (isClosed() && !done.classList.contains("show")) showClosed(); }, 30000);
+
+  $("comment").addEventListener("input", function () { $("cnt").textContent = this.value.length; });
+  $("tel").addEventListener("input", function () {
+    // 全角数字を半角に、数字以外を除去
+    this.value = this.value.replace(/[０-９]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/\D/g, "").slice(0, 11);
+  });
+
+  function err(id, on) { $("e-" + id).classList.toggle("show", on); return on; }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    msg.className = "msg";
+    if (isClosed()) { showClosed(); return; }
+
+    var name = $("name").value.trim();
+    var kana = $("kana").value.trim();
+    var cat = $("cat").value;
+    var tel = $("tel").value.trim();
+    var email = $("email").value.trim();
+    var comment = $("comment").value.trim();
+
+    var bad = false;
+    bad = err("name", !name || name.length > 40) || bad;
+    bad = err("cat", !cat) || bad;
+    bad = err("tel", !/^\d{10,11}$/.test(tel)) || bad;
+    bad = err("email", !!email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || bad;
+    if (bad) return;
+    if ($("hp").value) return; // ボット対策
+
+    btn.disabled = true;
+    btn.textContent = "送信中…";
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        "_subject": "yuzuさんと東条うどん交流会の申込み",
+        "_template": "table",
+        "_captcha": "false",
+        "お名前": name,
+        "フリガナ": kana || "（未記入）",
+        "参加区分": cat,
+        "電話番号": tel,
+        "メールアドレス": email || "（未記入）",
+        "ひとこと": comment || "（未記入）",
+        "送信日時": new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data && String(data.success) === "true") {
+        form.style.display = "none";
+        done.classList.add("show");
+        window.scrollTo(0, 0);
+      } else { throw new Error("fail"); }
+    })
+    .catch(function () {
+      msg.className = "msg err";
+      msg.textContent = "送信できませんでした。時間をおいてもう一度お試しください。";
+      btn.disabled = false;
+      btn.textContent = "申し込む";
+    });
+  });
+})();
+</script>
+</body>
+</html>
