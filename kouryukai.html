@@ -83,7 +83,7 @@
     <div class="fielderr" id="e-cat">参加区分を選択してください</div>
 
     <label for="tel">電話番号<span class="req">必須</span></label>
-    <input type="tel" id="tel" inputmode="numeric" maxlength="11" autocomplete="tel" placeholder="09012345678">
+    <input type="tel" id="tel" inputmode="numeric" autocomplete="tel" placeholder="09012345678">
     <div class="hint">ハイフンなし・数字のみ（10〜11桁）</div>
     <div class="fielderr" id="e-tel">ハイフンなしの数字10〜11桁で入力してください</div>
 
@@ -150,8 +150,13 @@
     bad = err("cat", !cat) || bad;
     bad = err("tel", !/^\d{10,11}$/.test(tel)) || bad;
     bad = err("email", !!email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || bad;
-    if (bad) return;
-    if ($("hp").value) return; // ボット対策
+    if (bad) {
+      msg.className = "msg err";
+      msg.textContent = "入力内容をご確認ください（赤字の項目）。";
+      var first = document.querySelector(".fielderr.show");
+      if (first) first.previousElementSibling.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
     btn.disabled = true;
     btn.textContent = "送信中…";
@@ -163,6 +168,7 @@
         "_subject": "yuzuさんと東条うどん交流会の申込み",
         "_template": "table",
         "_captcha": "false",
+        "_honey": $("hp").value,
         "お名前": name,
         "フリガナ": kana || "（未記入）",
         "参加区分": cat,
